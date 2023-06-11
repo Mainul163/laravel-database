@@ -14,6 +14,7 @@ class StudentsController extends Controller
         $this->middleware('auth');
     }
 
+    // get data from database
 
     public function index(){
 
@@ -22,6 +23,47 @@ class StudentsController extends Controller
         
         
     }
+
+
+    public function create(){
+
+        return view('admin.create.create');
+    }
+
+ // post data to database
+
+
+ public function store(Request $request){
+
+    $request->validate([
+        'name' => 'required|unique:students',
+        // table name is students
+        'roll'=>'required' ,
+        'email'=>'required|max:55',
+        
+       
+    ]);
+     
+    $data=array(
+        'name'=>$request->name,
+        'roll'=>$request->roll,
+        'email'=>$request->email
+    );
+   
+     DB::table('students')->insert($data);
+
+     return redirect()->back()->with('success','successfully inserted');
+ }
+
+  // delete data to database
+
+
+  public function delete($id){
+
+
+    DB::table('students')->where('id',$id)->delete();
+    return redirect()->back()->with('success','successfully deleted');
+  }
 
 }
  
