@@ -22,6 +22,8 @@ Route::get('/students', [App\Http\Controllers\admin\StudentsController::class, '
 Route::get('/create', [App\Http\Controllers\admin\StudentsController::class, 'create'])->name('create');
 Route::post('/store', [App\Http\Controllers\admin\StudentsController::class, 'store'])->name('store');
 Route::get('/delete/{id}', [App\Http\Controllers\admin\StudentsController::class, 'delete'])->name('delete');
+Route::get('/edit/{id}', [App\Http\Controllers\admin\StudentsController::class, 'edit'])->name('edit');
+Route::post('/name/{id}', [App\Http\Controllers\admin\StudentsController::class, 'editData'])->name('name');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 

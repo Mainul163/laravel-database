@@ -26,7 +26,7 @@
                                 <td>{{$row->email}}</td>
 
                                 <td>
-                                    <a class="btn btn-success">students</a>
+                                    <a href="{{url('edit/'.$row->id)}}" class="btn btn-success">Edit</a>
                                     <a href="{{url('delete/'.$row->id)}}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>

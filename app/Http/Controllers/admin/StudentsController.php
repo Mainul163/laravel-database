@@ -64,6 +64,30 @@ class StudentsController extends Controller
     DB::table('students')->where('id',$id)->delete();
     return redirect()->back()->with('success','successfully deleted');
   }
+  
+ // update data to database
+
+
+public function edit($id){
+return view('admin.edit.edit')->with(compact('id'));
+
+}
+
+
+public function editData(Request $request,$id){
+    $request->validate([
+        'name' => 'required',
+        
+    ]);
+
+   
+     $data=array('name'=>$request->name);
+
+     DB::table('students')->where('id',$id)->update($data);
+     return redirect()->back()->with('success','update successfully');
+    
+    }
+    
 
 }
  
