@@ -105,7 +105,16 @@ class ClassController extends Controller
             
            
         ]);
-        dd($request->all());
+        $data=array(
+            "students_id"=>$request->students_id,
+            "teacher_roll"=>$request->teacher_roll ,
+            "email"=>$request->email,
+            
+
+        );
+        DB::table('classes')->where('id',$id)->update($data);
+
+     return redirect('admin.class.class')->with('success','successfully updated');
     }
 
     /**
