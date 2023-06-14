@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\admin\ClassController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +31,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //* **************** jokhn amra form use korbo tokhn delete method use korbo **********************************
 
 // Route::delete('/delete/{id}', [App\Http\Controllers\admin\StudentsController::class, 'delete'])->name('delete');
+
+
+
+
+
+// *************************** resource routing *****************************************
+
+ 
+Route::resource('class', ClassController::class);

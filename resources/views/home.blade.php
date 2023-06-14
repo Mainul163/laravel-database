@@ -9,13 +9,13 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
-                     
+
                     <a href="{{url('students')}}" class="btn btn-success">students</a>
-                    <a href="{{url('class')}}" class="btn btn-danger">class</a>
+                    <a href="{{route('class.index')}}" class="btn btn-danger">class</a>
                     <br>
                     {{ __('You are logged in!') }}
                 </div>
