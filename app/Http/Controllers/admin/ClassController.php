@@ -114,7 +114,7 @@ class ClassController extends Controller
         );
         DB::table('classes')->where('id',$id)->update($data);
 
-     return redirect('admin.class.class')->with('success','successfully updated');
+     return redirect()->route('class.index')->with('success','successfully updated');
     }
 
     /**
