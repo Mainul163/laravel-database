@@ -19,26 +19,16 @@
                         </thead>
                         <tbody>
 
-                            @foreach($class as $key=>$row)
+
                             <tr>
-                                <th scope="row">{{++$key}}</th>
-                                <td>{{$row->teacher_roll}}</td>
-                                <td>{{$row->email}}</td>
-                                <td>{{$row->students_id}}</td>
+                                <th scope="row">{{$class->id}}</th>
+                                <td>{{$class->teacher_roll}}</td>
+                                <td>{{$class->email}}</td>
+                                <td>{{$class->students_id}}</td>
 
-                                <td>
-                                    <a href="{{route('class.edit',$row->id)}}" class="btn btn-success">Edit</a>
-                                    <a href="{{route('class.show',$row->id)}}" class="btn btn-info">view</a>
-                                    <form action="{{route('class.destroy',$row->id)}}" method="post">
 
-                                        @csrf
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type='submit' class="btn btn-danger">DELETE</button>
-                                    </form>
-
-                                </td>
                             </tr>
-                            @endforeach
+
 
                         </tbody>
                     </table>

@@ -69,6 +69,12 @@ class ClassController extends Controller
     public function show($id)
     {
         //
+       
+        $class=DB::table('classes')->where('id',$id)->first();
+
+        // or
+        // $class=DB::table('classes')->find($id);
+        return view ('admin.class.view')->with(compact('class'));
     }
 
     /**
