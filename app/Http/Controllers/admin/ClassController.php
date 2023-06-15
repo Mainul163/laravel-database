@@ -14,7 +14,12 @@ class ClassController extends Controller
      */
     public function index()
     {
-       $class=DB::table('classes')->orderBy('teacher_roll','asc')->get();
+    //    $class=DB::table('classes')->orderBy('teacher_roll','asc')->get();
+
+    // ********* primary key foreign key ****************
+
+       $class=DB::table('classes')->join('students','classes.students_id','students.id')->get();
+     
        return view ('admin.class.class')->with(compact('class'));
     }
 

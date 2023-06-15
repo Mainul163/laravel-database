@@ -24,7 +24,7 @@
                                 <th scope="row">{{++$key}}</th>
                                 <td>{{$row->teacher_roll}}</td>
                                 <td>{{$row->email}}</td>
-                                <td>{{$row->students_id}}</td>
+                                <td>{{$row->name}}</td>
 
                                 <td>
                                     <a href="{{route('class.edit',$row->id)}}" class="btn btn-success">Edit</a>
