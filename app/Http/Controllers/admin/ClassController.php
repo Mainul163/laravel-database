@@ -27,7 +27,7 @@ class ClassController extends Controller
 
     // ***************** pagination ***********************
 
-    // $class=DB::table('classes')->join('students','classes.students_id','students.id')->paginate(2);
+     // $class=DB::table('classes')->join('students','classes.students_id','students.id')->paginate(2);
      
        return view ('admin.class.class')->with(compact('class'));
     }
@@ -57,7 +57,7 @@ class ClassController extends Controller
             // 'name' => 'required|unique:students',
             // table name is students
             'teacher_roll'=>'required' ,
-            'email'=>'required|max:55',
+            'c_email'=>'required|max:55',
             
            
         ]);
@@ -65,7 +65,7 @@ class ClassController extends Controller
         $data=array(
             "students_id"=>$request->students_id,
             "teacher_roll"=>$request->teacher_roll ,
-            "email"=>$request->email,
+            "c_email"=>$request->c_email,
             
 
         );
@@ -128,7 +128,7 @@ class ClassController extends Controller
         $data=array(
             "students_id"=>$request->students_id,
             "teacher_roll"=>$request->teacher_roll ,
-            "email"=>$request->email,
+            "c_email"=>$request->email,
             
 
         );

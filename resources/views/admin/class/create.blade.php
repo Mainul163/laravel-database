@@ -31,10 +31,10 @@
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" name='email' class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" class="@error('email') is-invalid @enderror"
-                                value="{{old('email')}}">
-                            @error('email')
+                            <input type="email" name='c_email' class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" class="@error('c_email') is-invalid @enderror"
+                                value="{{old('c_email')}}">
+                            @error('c_email')
                             <strong class=" text-danger">{{ $message }}</strong>
                             @enderror
                         </div>

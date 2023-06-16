@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('students_id');
             $table->integer('teacher_roll')->nullable();
-            $table->string('email',50)->nullable();
+            $table->string('c_email',50)->nullable();
             $table->timestamps();
             $table->foreign('students_id')->references('id')->on('students')->onDelete('cascade');
 
