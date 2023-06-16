@@ -18,10 +18,16 @@ class ClassController extends Controller
 
     // ********* primary key foreign key ****************
 
+      
        $class=DB::table('classes')->join('students','classes.students_id','students.id')->get();
 
     //    ********************* multiple join ************
     //    $class=DB::table('classes')->join('students','classes.students_id','students.id')->join("");
+
+
+    // ***************** pagination ***********************
+
+    // $class=DB::table('classes')->join('students','classes.students_id','students.id')->paginate(2);
      
        return view ('admin.class.class')->with(compact('class'));
     }

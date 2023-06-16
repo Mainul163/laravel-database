@@ -21,9 +21,9 @@
 
                             @foreach($class as $key=>$row)
                             <tr>
-                                <th scope="row">{{++$key}}</th>
+                                <th scope="row">{{$row->c_id}}</th>
                                 <td>{{$row->teacher_roll}}</td>
-                                <td>{{$row->email}}</td>
+                                <td>{{$row->c_email}}</td>
                                 <td>{{$row->name}}</td>
 
                                 <td>
@@ -42,6 +42,7 @@
 
                         </tbody>
                     </table>
+                    {{ $class->links() }}
                 </div>
             </div>
         </div>
