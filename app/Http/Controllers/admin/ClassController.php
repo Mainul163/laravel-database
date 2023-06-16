@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Student;
 class ClassController extends Controller
 {
     /**
@@ -21,6 +22,7 @@ class ClassController extends Controller
       
        $class=DB::table('classes')->join('students','classes.students_id','students.id')->get();
 
+
     //    ********************* multiple join ************
     //    $class=DB::table('classes')->join('students','classes.students_id','students.id')->join("");
 
@@ -30,6 +32,15 @@ class ClassController extends Controller
      // $class=DB::table('classes')->join('students','classes.students_id','students.id')->paginate(2);
      
        return view ('admin.class.class')->with(compact('class'));
+
+
+
+       // **************** models ************************
+
+       
+    $students=Student::all();
+
+    return response()->json($students);
     }
 
     /**
